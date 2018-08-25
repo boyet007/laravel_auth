@@ -24,6 +24,7 @@
         "vue-template-compiler": "^2.5.17"
     },
     "dependencies": {
+        "@websanova/vue-auth": "^2.21.14-beta",
         "js-beautify": "^1.6.14"
     }
 }
