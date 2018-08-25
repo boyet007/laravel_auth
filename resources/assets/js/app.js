@@ -9,8 +9,8 @@ import Dashboard from './components/Dashboard.vue';
 import Register from './components/Register.vue';
 import Login from './components/Login.vue';
 
-Vue.use(VueRouter, VueAxios, axios);
-
+Vue.use(VueRouter);
+Vue.use(VueAxios, axios);
 axios.defaults.baseURL = 'http://localhost:8000/api';
 
 const router = new VueRouter({
@@ -41,7 +41,6 @@ const router = new VueRouter({
 });
 
 Vue.router = router
-
 Vue.use(require('@websanova/vue-auth'), {
     auth: require('@websanova/vue-auth/drivers/auth/bearer.js'),
     http: require('@websanova/vue-auth/drivers/http/axios.1.x.js'),
@@ -49,7 +48,6 @@ Vue.use(require('@websanova/vue-auth'), {
 });
 
 App.router = Vue.router
-
 new Vue(App).$mount('#app');
 
 // const app = new Vue({

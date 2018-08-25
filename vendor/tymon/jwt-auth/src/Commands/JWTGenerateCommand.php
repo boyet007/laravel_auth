@@ -67,6 +67,10 @@ class JWTGenerateCommand extends Command
         return Str::random(32);
     }
 
+    public function handle() {
+        $this->fire();
+    }
+
     /**
      * Get the console command options.
      *
