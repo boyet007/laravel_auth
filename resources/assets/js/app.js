@@ -35,7 +35,7 @@ const router = new VueRouter({
         {
             path: '/dashboard',
             name: 'dashboard',
-            component: Login,
+            component: Dashboard,
             meta: { auth: true }
         }]
 });
