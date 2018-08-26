@@ -14445,11 +14445,19 @@ function applyToTag (styleElement, obj) {
                     password: app.password
                 },
                 success: function success() {},
-                error: function error() {},
+                error: function error(e) {
+                    var errResp = e.response.data;
+                    app.error = true;
+                    app.remoteMsg = errResp.msg;
+                    console.log('[Error] Login: ' + errResp.msg);
+                },
                 rememberMe: true,
                 redirect: '/dashboard',
                 fetchUser: true
             });
+        },
+        hideAlert: function hideAlert() {
+            this.error = false;
         }
     }
 });
@@ -14576,7 +14584,7 @@ var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
     }, {
         path: '/dashboard',
         name: 'dashboard',
-        component: __WEBPACK_IMPORTED_MODULE_8__components_Login_vue__["a" /* default */],
+        component: __WEBPACK_IMPORTED_MODULE_6__components_Dashboard_vue__["a" /* default */],
         meta: { auth: true }
     }]
 });
@@ -50653,8 +50661,8 @@ var render = function() {
               "li",
               { staticClass: "float-right" },
               [
-                _c("router-link", { attrs: { to: { name: "home" } } }, [
-                  _vm._v("Home")
+                _c("router-link", { attrs: { to: { name: "dashboard" } } }, [
+                  _vm._v("Dashboard")
                 ])
               ],
               1
@@ -50686,7 +50694,7 @@ var render = function() {
                 )
               : _vm._e(),
             _vm._v(" "),
-            !_vm.$auth.check()
+            _vm.$auth.check()
               ? _c("li", { staticClass: "pull-right" }, [
                   _c(
                     "a",
@@ -50843,7 +50851,7 @@ if (false) {(function () {
   })
 })()}
 
-/* unused harmony default export */ var _unused_webpack_default_export = (Component.exports);
+/* harmony default export */ __webpack_exports__["a"] = (Component.exports);
 
 
 /***/ }),
@@ -51209,7 +51217,7 @@ exports = module.exports = __webpack_require__(13)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 

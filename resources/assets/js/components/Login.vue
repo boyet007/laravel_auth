@@ -35,13 +35,20 @@ export default {
                     password: app.password
                 },
                 success: function() {
-                    
                 },
-                error: function() {},
+                error: function(e) {
+                    const errResp = e.response.data;
+                    app.error = true;
+                    app.remoteMsg = errResp.msg;
+                    console.log('[Error] Login: ' + errResp.msg);
+                },
                 rememberMe: true,
                 redirect: '/dashboard',
                 fetchUser: true
             });
+        },
+        hideAlert() {
+            this.error = false;
         }
     }
 }

@@ -4,10 +4,10 @@
         <div class="card-header">
         <nav>
             <ul class="list-inline">
-                <li class="float-right"><router-link :to="{ name : 'home'}">Home</router-link></li>
+                <li class="float-right"><router-link :to="{ name : 'dashboard'}">Dashboard</router-link></li>
                 <li v-if="!$auth.check()" class="float-right"><router-link :to="{ name : 'login' }">Login</router-link></li>
                 <li v-if="!$auth.check()" class="float-right"><router-link :to="{ name : 'register' }">Register</router-link></li>
-                <li v-if="!$auth.check()" class="pull-right"><a href="#" @click.prevent="$auth.logout()">Logout</a></li>
+                <li v-if="$auth.check()" class="pull-right"><a href="#" @click.prevent="$auth.logout()">Logout</a></li>
             </ul>
         </nav>
         </div>
